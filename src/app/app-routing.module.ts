@@ -1,9 +1,9 @@
  import { NgModule } from '@angular/core';
  import { Routes, RouterModule } from '@angular/router';
 
- import { FirstModule, routingFirstComponents } from './first/first.module';
- import { SecondModule, routingSecondComponents } from './second/second.module';
- import { ThirdModule, routingThirdComponents } from './third/third.module';
+ import { FirstRoutingModule, routingFirstComponents } from './first/first-routing.module';
+ import { SecondRoutingModule, routingSecondComponents } from './second/second-routing.module';
+ import { ThirdRoutingModule, routingThirdComponents } from './third/third-routing.module';
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'first'}
@@ -11,7 +11,7 @@ const routes: Routes = [
 
 @NgModule ({
     declarations: [routingFirstComponents, routingSecondComponents, routingThirdComponents],
-    imports: [ FirstModule, SecondModule, ThirdModule, RouterModule.forRoot (routes)],
+    imports: [ FirstRoutingModule, SecondRoutingModule, ThirdRoutingModule, RouterModule.forRoot (routes)],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}
