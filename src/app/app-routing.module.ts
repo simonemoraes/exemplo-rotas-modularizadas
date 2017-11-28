@@ -1,18 +1,17 @@
-importe {NgModule} de '@ angular / core';
-importe {Routes, RouterModule} de '@ angular / router';
-importe {FirstComponent} de './first.component';
-importe {SecondComponent} de './second.component';
-importe {ThirdComponent} de './third.component';
+ import { NgModule } from '@angular/core';
+ import { Routes, RouterModule } from '@angular/router';
 
-rotas const: Routes = [
-    {path: '', pathMatch: 'full', redirectTo: 'first'},
-    {path: 'first', component: FirstComponent},
-    {path: 'second', component: SecondComponent},
-    { path: 'third', componente: ThirdComponent},
+ import { FirstModule, routingFirstComponents } from './first/first.module';
+ import { SecondModule, routingSecondComponents } from './second/second.module';
+ import { ThirdModule, routingThirdComponents } from './third/third.module';
+
+const routes: Routes = [
+    {path: '', pathMatch: 'full', redirectTo: 'first'}
 ];
 
 @NgModule ({
-    importações: [RouterModule.forRoot (rotas)],
-    exportações: [RouterModule],
+    declarations: [routingFirstComponents, routingSecondComponents, routingThirdComponents],
+    imports: [ FirstModule, SecondModule, ThirdModule, RouterModule.forRoot (routes)],
+    exports: [RouterModule],
 })
-classe de exportação AppRoutingModule {}
+export class AppRoutingModule {}
