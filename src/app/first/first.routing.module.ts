@@ -41,7 +41,7 @@ const firstRoutes: Routes = [
 ];
 
 @NgModule ({
-    declarations: [ FirstComponent ],
+    declarations: [],
     imports: [ RouterModule.forChild (firstRoutes) ],
     exports: [RouterModule],
 })

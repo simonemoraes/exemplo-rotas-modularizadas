@@ -7,9 +7,9 @@
 import { NgModule } from '@angular/core';
  import { Routes, RouterModule } from '@angular/router';
 
- import { FirstRoutingModule, routingFirstComponents } from './first/first-routing.module';
- import { SecondRoutingModule, routingSecondComponents } from './second/second-routing.module';
- import { ThirdRoutingModule, routingThirdComponents } from './third/third-routing.module';
+ import { FirstRoutingModule, routingFirstComponents } from './first/first.routing.module';
+ import { SecondRoutingModule, routingSecondComponents } from './second/second.routing.module';
+ import { ThirdRoutingModule, routingThirdComponents } from './third/third.routing.module';
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'first'}
@@ -32,14 +32,16 @@ export class AppRoutingModule {}
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {HomeComponent} from './home/home.component';
 
-const routes: Routes = [
-    {path: '', pathMatch: 'full', redirectTo: ''}
+const appRoutes: Routes = [
+    {path: '', pathMatch: 'full', redirectTo: 'home'},
+    {path: 'home', component: HomeComponent}
 ];
 
 @NgModule ({
     declarations: [],
-    imports: [ RouterModule.forRoot (routes) ],
+    imports: [ RouterModule.forRoot (appRoutes) ],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}

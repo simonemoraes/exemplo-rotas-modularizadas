@@ -31,3 +31,19 @@ export const routingSecondComponents = [ SecondComponent ]
  * Curso: Angular 2 e 4
  * Autor: Loiane
  */
+
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { SecondComponent } from './second.component';
+
+const secondRoutes: Routes = [
+    {path: 'second', component: SecondComponent},
+];
+
+@NgModule ({
+    declarations: [],
+    imports: [ RouterModule.forChild (secondRoutes) ],
+    exports: [ RouterModule ],
+})
+export class SecondRoutingModule {}

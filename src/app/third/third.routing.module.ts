@@ -31,3 +31,20 @@ export const routingThirdComponents = [ ThirdComponent ]
  * Curso: Angular 2 e 4
  * Autor: Loiane
  */
+
+
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { ThirdComponent } from './third.component';
+
+const thirdRoutes: Routes = [
+    {path: 'third', component: ThirdComponent},
+];
+
+@NgModule ({
+    declarations: [],
+    imports: [ RouterModule.forChild (thirdRoutes) ],
+    exports: [RouterModule],
+})
+export class ThirdRoutingModule {}
